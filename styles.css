@@ -6,11 +6,12 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
-  overflow: hidden; /* Чтобы сердечки не выходили за пределы экрана */
+  overflow: hidden;
 }
 
 .container {
   text-align: center;
+  padding: 20px; /* Добавляем отступы для мобильных устройств */
 }
 
 h1 {
@@ -79,5 +80,47 @@ button {
   100% {
     transform: translateY(-100vh);
     opacity: 0;
+  }
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem; /* Уменьшаем размер заголовка */
+  }
+
+  .buttons {
+    flex-direction: column; /* Кнопки в столбик */
+  }
+
+  button {
+    margin: 10px 0; /* Отступы между кнопками */
+    width: 100%; /* Кнопки на всю ширину */
+  }
+
+  #photo-container img {
+    max-width: 100%; /* Фото на всю ширину экрана */
+  }
+
+  #photo-container p {
+    font-size: 2rem; /* Уменьшаем размер текста */
+  }
+
+  .heart {
+    font-size: 1.5rem; /* Уменьшаем размер сердечек */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem; /* Еще меньше размер заголовка */
+  }
+
+  #photo-container p {
+    font-size: 1.5rem; /* Еще меньше размер текста */
+  }
+
+  .heart {
+    font-size: 1.2rem; /* Еще меньше размер сердечек */
   }
 }
