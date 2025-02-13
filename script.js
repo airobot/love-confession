@@ -6,9 +6,7 @@ const heartsContainer = document.getElementById('hearts-container');
 // Обработчик для кнопки "Да!"
 yesBtn.addEventListener('click', () => {
   photoContainer.classList.remove('hidden');
-
-  // Создаем сердечки
-  createHearts();
+  startHearts(); // Запускаем создание сердечек
 });
 
 // Обработчик для кнопки "Нет"
@@ -22,19 +20,29 @@ noBtn.addEventListener('mouseover', () => {
 
 // Функция для создания сердечек
 function createHearts() {
-  const heartCount = window.innerWidth < 768 ? 20 : 50; // Меньше сердечек на мобильных
-  for (let i = 0; i < heartCount; i++) {
-    const heart = document.createElement('div');
-    heart.innerHTML = '❤️';
-    heart.classList.add('heart');
+  const heart = document.createElement('div');
+  heart.innerHTML = '❤️';
+  heart.classList.add('heart');
 
-    // Случайная позиция на экране
-    heart.style.left = `${Math.random() * 100}vw`;
-    heart.style.top = `${Math.random() * 100}vh`;
+  // Случайная позиция на экране
+  heart.style.left = `${Math.random() * 100}vw`;
+  heart.style.top = `${Math.random() * 100}vh`;
 
-    // Случайная задержка анимации
-    heart.style.animationDelay = `${Math.random() * 2}s`;
+  // Случайная задержка анимации
+  heart.style.animationDelay = `${Math.random() * 2}s`;
 
-    heartsContainer.appendChild(heart);
-  }
+  heartsContainer.appendChild(heart);
+
+  // Удаляем сердечко после завершения анимации
+  heart.addEventListener('animationend', () => {
+    heart.remove();
+  });
 }
+
+// Запуск создания сердечек
+function startHearts() {
+  setInterval(createHearts, 300); // Создаем сердечко каждые 300 мс
+}
+
+// Запускаем сердечки сразу при загрузке страницы (опционально)
+startHearts();
