@@ -1,18 +1,19 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #f9f9f9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   margin: 0;
-  overflow: hidden;
+  overflow-y: auto; /* Разрешаем вертикальную прокрутку */
 }
 
 .container {
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
+  min-height: 100vh; /* Минимальная высота контейнера — весь экран */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 {
@@ -27,7 +28,7 @@ h1 {
   justify-content: center;
   gap: 10px;
   width: 100%;
-  max-width: 200px;
+  max-width: 100px;
   margin: 0 auto;
 }
 
@@ -67,13 +68,13 @@ button {
 }
 
 #photo-container p {
-  font-size: 4rem; /* Большой размер текста */
-  font-weight: bold; /* Жирный текст */
-  color: red; /* Красный цвет */
-  margin-top: 20px; /* Отступ сверху */
-  text-align: center; /* Центрируем текст */
-  width: 100%; /* Текст занимает всю ширину контейнера */
-  white-space: nowrap; /* Текст не переносится на новую строку */
+  font-size: 4rem;
+  font-weight: bold;
+  color: red;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+  white-space: nowrap;
 }
 
 /* Контейнер для сердечек */
@@ -130,7 +131,7 @@ button {
   }
 
   #photo-container p {
-    font-size: 3rem; /* Уменьшаем размер текста для мобильных */
+    font-size: 3rem;
   }
 
   .heart {
@@ -148,7 +149,7 @@ button {
   }
 
   #photo-container p {
-    font-size: 2.5rem; /* Еще меньше размер текста для маленьких экранов */
+    font-size: 2.5rem;
   }
 
   .heart {
