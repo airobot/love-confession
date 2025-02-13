@@ -11,24 +11,24 @@ body {
 
 .container {
   text-align: center;
-  padding: 20px; /* Отступы для мобильных устройств */
-  box-sizing: border-box; /* Учитываем padding в ширине */
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 h1 {
   font-size: 2.5rem;
   color: #333;
-  margin-bottom: 20px; /* Отступ снизу для заголовка */
+  margin-bottom: 20px;
 }
 
 .buttons {
   display: flex;
-  flex-direction: row; /* Кнопки в строку по умолчанию */
+  flex-direction: row;
   justify-content: center;
-  gap: 10px; /* Расстояние между кнопками */
+  gap: 10px;
   width: 100%;
-  max-width: 400px; /* Максимальная ширина контейнера кнопок */
-  margin: 0 auto; /* Центрируем контейнер */
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 button {
@@ -37,8 +37,8 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  flex: 1; /* Кнопки занимают равное пространство */
-  min-width: 100px; /* Минимальная ширина кнопки */
+  flex: 1;
+  min-width: 100px;
 }
 
 #yes-btn {
@@ -49,7 +49,7 @@ button {
 #no-btn {
   background-color: #f44336;
   color: white;
-  position: relative; /* Убираем absolute для мобильной версии */
+  position: relative;
 }
 
 .hidden {
@@ -61,16 +61,19 @@ button {
 }
 
 #photo-container img {
-  width: 100%; /* Фото занимает всю ширину контейнера */
-  max-width: 600px; /* Максимальная ширина фото */
+  width: 100%;
+  max-width: 600px;
   border-radius: 10px;
 }
 
 #photo-container p {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: red;
-  margin-top: 20px;
+  font-size: 4rem; /* Большой размер текста */
+  font-weight: bold; /* Жирный текст */
+  color: red; /* Красный цвет */
+  margin-top: 20px; /* Отступ сверху */
+  text-align: center; /* Центрируем текст */
+  width: 100%; /* Текст занимает всю ширину контейнера */
+  white-space: nowrap; /* Текст не переносится на новую строку */
 }
 
 /* Контейнер для сердечек */
@@ -107,48 +110,48 @@ button {
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
   h1 {
-    font-size: 2rem; /* Уменьшаем размер заголовка */
+    font-size: 2rem;
   }
 
   .buttons {
-    flex-direction: column; /* Кнопки в столбик */
-    gap: 10px; /* Расстояние между кнопками */
-    max-width: 90%; /* Ограничиваем ширину контейнера */
+    flex-direction: column;
+    gap: 10px;
+    max-width: 90%;
   }
 
   button {
-    width: 100%; /* Кнопки занимают всю ширину контейнера */
-    font-size: 1rem; /* Уменьшаем размер текста */
-    padding: 12px 0; /* Увеличиваем отступы для удобства нажатия */
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px 0;
   }
 
   #photo-container img {
-    max-width: 100%; /* Фото на всю ширину экрана */
+    max-width: 100%;
   }
 
   #photo-container p {
-    font-size: 2rem; /* Уменьшаем размер текста */
+    font-size: 3rem; /* Уменьшаем размер текста для мобильных */
   }
 
   .heart {
-    font-size: 1.5rem; /* Уменьшаем размер сердечек */
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.5rem; /* Еще меньше размер заголовка */
+    font-size: 1.5rem;
   }
 
   button {
-    font-size: 0.9rem; /* Еще меньше размер текста */
+    font-size: 0.9rem;
   }
 
   #photo-container p {
-    font-size: 1.5rem; /* Еще меньше размер текста */
+    font-size: 2.5rem; /* Еще меньше размер текста для маленьких экранов */
   }
 
   .heart {
-    font-size: 1.2rem; /* Еще меньше размер сердечек */
+    font-size: 1.2rem;
   }
 }
