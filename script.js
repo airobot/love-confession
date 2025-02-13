@@ -22,8 +22,7 @@ noBtn.addEventListener('mouseover', () => {
 
 // Функция для создания сердечек
 function createHearts() {
-  const heartCount = 50; // Количество сердечек
-
+  const heartCount = window.innerWidth < 768 ? 20 : 50; // Меньше сердечек на мобильных
   for (let i = 0; i < heartCount; i++) {
     const heart = document.createElement('div');
     heart.innerHTML = '❤️';
