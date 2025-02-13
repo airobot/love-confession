@@ -55,7 +55,8 @@ button {
 }
 
 #photo-container p {
-  font-size: 1.5rem;
-  color: #4CAF50;
-  margin-top: 10px;
+  font-size: 2.5rem; /* Большой размер текста */
+  font-weight: bold; /* Жирный текст */
+  color: red; /* Красный цвет */
+  margin-top: 20px; /* Отступ сверху */
 }
