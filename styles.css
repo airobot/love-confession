@@ -6,6 +6,7 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  overflow: hidden; /* Чтобы сердечки не выходили за пределы экрана */
 }
 
 .container {
@@ -50,13 +51,33 @@ button {
 }
 
 #photo-container img {
-  width: 200px;
+  width: 100%; /* Фото занимает всю ширину контейнера */
+  max-width: 600px; /* Максимальная ширина фото */
   border-radius: 10px;
 }
 
 #photo-container p {
-  font-size: 2.5rem; /* Большой размер текста */
-  font-weight: bold; /* Жирный текст */
-  color: red; /* Красный цвет */
-  margin-top: 20px; /* Отступ сверху */
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: red;
+  margin-top: 20px;
+}
+
+/* Стили для сердечек */
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 2rem;
+  animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
 }
