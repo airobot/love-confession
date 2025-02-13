@@ -12,15 +12,23 @@ body {
 .container {
   text-align: center;
   padding: 20px; /* Отступы для мобильных устройств */
+  box-sizing: border-box; /* Учитываем padding в ширине */
 }
 
 h1 {
   font-size: 2.5rem;
   color: #333;
+  margin-bottom: 20px; /* Отступ снизу для заголовка */
 }
 
 .buttons {
-  margin-top: 20px;
+  display: flex;
+  flex-direction: row; /* Кнопки в строку по умолчанию */
+  justify-content: center;
+  gap: 10px; /* Расстояние между кнопками */
+  width: 100%;
+  max-width: 400px; /* Максимальная ширина контейнера кнопок */
+  margin: 0 auto; /* Центрируем контейнер */
 }
 
 button {
@@ -29,7 +37,8 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin: 0 10px;
+  flex: 1; /* Кнопки занимают равное пространство */
+  min-width: 100px; /* Минимальная ширина кнопки */
 }
 
 #yes-btn {
@@ -40,7 +49,7 @@ button {
 #no-btn {
   background-color: #f44336;
   color: white;
-  position: absolute;
+  position: relative; /* Убираем absolute для мобильной версии */
 }
 
 .hidden {
@@ -66,13 +75,13 @@ button {
 
 /* Контейнер для сердечек */
 #hearts-container {
-  position: fixed; /* Фиксированное позиционирование */
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100vw; /* На всю ширину экрана */
-  height: 100vh; /* На всю высоту экрана */
-  pointer-events: none; /* Чтобы клики проходили сквозь сердечки */
-  z-index: 9999; /* Высокий z-index, чтобы быть поверх всех элементов */
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 /* Стили для сердечек */
@@ -81,7 +90,7 @@ button {
   color: red;
   font-size: 2rem;
   animation: float 5s infinite ease-in-out;
-  pointer-events: none; /* Чтобы клики проходили сквозь сердечки */
+  pointer-events: none;
 }
 
 @keyframes float {
@@ -103,15 +112,14 @@ button {
 
   .buttons {
     flex-direction: column; /* Кнопки в столбик */
-    align-items: center; /* Центрируем кнопки */
-    width: 100%; /* Кнопки занимают всю ширину */
+    gap: 10px; /* Расстояние между кнопками */
+    max-width: 90%; /* Ограничиваем ширину контейнера */
   }
 
   button {
-    margin: 10px 0; /* Отступы между кнопками */
-    width: 80%; /* Кнопки занимают 80% ширины экрана */
-    max-width: 300px; /* Максимальная ширина кнопок */
-    font-size: 1rem; /* Уменьшаем размер текста на кнопках */
+    width: 100%; /* Кнопки занимают всю ширину контейнера */
+    font-size: 1rem; /* Уменьшаем размер текста */
+    padding: 12px 0; /* Увеличиваем отступы для удобства нажатия */
   }
 
   #photo-container img {
@@ -133,8 +141,7 @@ button {
   }
 
   button {
-    width: 90%; /* Кнопки занимают 90% ширины экрана */
-    font-size: 0.9rem; /* Еще меньше размер текста на кнопках */
+    font-size: 0.9rem; /* Еще меньше размер текста */
   }
 
   #photo-container p {
