@@ -3,10 +3,17 @@ const noBtn = document.getElementById('no-btn');
 const photoContainer = document.getElementById('photo-container');
 const heartsContainer = document.getElementById('hearts-container');
 
+let heartsInterval; // Переменная для хранения интервала создания сердечек
+
 // Обработчик для кнопки "Да!"
 yesBtn.addEventListener('click', () => {
   photoContainer.classList.remove('hidden');
   startHearts(); // Запускаем создание сердечек
+
+  // Останавливаем создание новых сердечек через минуту
+  setTimeout(() => {
+    stopHearts();
+  }, 60000); // 60000 мс = 1 минута
 });
 
 // Обработчик для кнопки "Нет"
@@ -41,7 +48,12 @@ function createHearts() {
 
 // Запуск создания сердечек
 function startHearts() {
-  setInterval(createHearts, 300); // Создаем сердечко каждые 300 мс
+  heartsInterval = setInterval(createHearts, 300); // Создаем сердечко каждые 300 мс
+}
+
+// Остановка создания сердечек
+function stopHearts() {
+  clearInterval(heartsInterval); // Останавливаем интервал
 }
 
 // Запускаем сердечки сразу при загрузке страницы (опционально)
