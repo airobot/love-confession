@@ -124,3 +124,35 @@ button {
     font-size: 1.2rem; /* Еще меньше размер сердечек */
   }
 }
+
+
+/* Контейнер для сердечек */
+#hearts-container {
+  position: fixed; /* Фиксированное позиционирование */
+  top: 0;
+  left: 0;
+  width: 100vw; /* На всю ширину экрана */
+  height: 100vh; /* На всю высоту экрана */
+  pointer-events: none; /* Чтобы клики проходили сквозь сердечки */
+  z-index: 9999; /* Высокий z-index, чтобы быть поверх всех элементов */
+}
+
+/* Стили для сердечек */
+.heart {
+  position: absolute;
+  color: red;
+  font-size: 2rem;
+  animation: float 5s infinite ease-in-out;
+  pointer-events: none; /* Чтобы клики проходили сквозь сердечки */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
