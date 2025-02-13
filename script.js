@@ -3,11 +3,11 @@ const noBtn = document.getElementById('no-btn');
 const photoContainer = document.getElementById('photo-container');
 const heartsContainer = document.getElementById('hearts-container');
 
-let heartsInterval = null; // Инициализируем переменную для интервала
+let heartsInterval = null; // Переменная для хранения интервала
 
 // Обработчик для кнопки "Да!"
 yesBtn.addEventListener('click', () => {
-  photoContainer.classList.remove('hidden');
+  photoContainer.classList.remove('hidden'); // Показываем фото и текст
   startHearts(); // Запускаем создание сердечек
 
   // Останавливаем создание новых сердечек через минуту
@@ -60,6 +60,3 @@ function stopHearts() {
     heartsInterval = null; // Сбрасываем переменную
   }
 }
-
-// Запускаем сердечки сразу при загрузке страницы (опционально)
-startHearts();
